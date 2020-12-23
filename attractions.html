@@ -7,58 +7,93 @@
         <meta name = "author" content="UoL CS WebDev - Space Z">
         <meta name ="keywords" content="spaceZ, space, universe, theme park, entertainment, fun, family, rides, attraction, amusement">
         <meta name="viewport" content="width=device-width, initial-scale =1.0" > 
-        <link rel="stylesheet" href="./styles/stylesheet.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     
-    <body class="container">
-        <header>
-            <a href= "./index.html"><img src ="./images/logo.svg" alt="SpaceZ logo - a rocket" width="50"></a>
-        </header>
-        <nav class="main-menu">
-<!--            <a href="index.html">Home</a>-->
-            <a href="./attractions.html">Attractions</a>
-            <a href="./visit-us.html">Visit us</a>
-            <a id="main-button" href="./visit-us.html">Buy tickets</a>
-        </nav>
+    <body>
+        
+         <header>
+                <div class="logo"><img src="images/logo.svg" id="logo"></div>
+                <nav class="header_nav"> 
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="attractions.html">Attractions</a></li>
+                        <li><a href="visit-us.html">Visit Us</a></li>
+                       <li class="button"> <a href="attractions.html">Buy Tickets</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <div class="wrapper">
         <main>
+            
             <!-- Landing area for asides-->
-            <h2>Spaceship ride</h2>
-            <img src="./images/sandro-katalina-k1bO_VTiZSs-unsplash.jpg" alt="spaceship-ride">
-            <p>Our flagiship attraction that will inmerse you in a trip to outer space</p>   
-        </main> 
-        <!-- Asides for navigation--> 
-        <aside class="rides">
-            <h3>Our rides</h3>
-            <img src="./images/nathan-duck-KnLj3o9A66E-unsplash.jpg" alt="rides-photo"><br>
-            <button>View more</button>
-        </aside>
-        <aside class="observatory">
-            <h3>Observatory</h3>
-            <img src="./images/brian-mcgowan-0A450BR1JWk-unsplash.jpg" alt="observatory-photo"><br>
-            <button>Schedule your visit</button>
-        </aside>
-        <aside class="events-food">
-            <h3>Food</h3>
-            <img src="./images/solar%20eclipse.jpg" alt="The solar eclipse restaurant on display" width ="640">
+            
+            <div class ="attraction">
+                <h2>Speical Feature - Spaceship ride</h2>
+                <img src="images/sandro-katalina-k1bO_VTiZSs-unsplash.jpg" alt="spaceship-ride">
+                <p>Our flagiship attraction that will inmerse you in a trip to outer space</p> 
+            </div>
+            
+            <div class="attraction">
+                <h3>Observatory</h3>
+                <img src="images/brian-mcgowan-0A450BR1JWk-unsplash.jpg" alt="observatory-photo">
+                <p> some description</p>
+                <button class ="button">Schedule your visit</button>
+            </div>
+            
+            <div class="attraction">
+                <h3>Events Centers</h3>
+                <img src="images/pablo-heimplatz-ZODcBkEohk8-unsplash.jpg" alt="events-photo">
+                <p> some description</p>
+                <button class ="button">Check our schedule</button>
+            </div>
+            
+            <div class="attraction">
+                <h3>Food & Drink</h3>
+            <img src="images/solar%20eclipse.jpg" alt="The solar eclipse restaurant on display" width ="640">
             <p> The Solar Eclipse is one of our oldest and most popular restaurants with form families. We have world renouned chefs like Emril Lagasse serving up unique meals like tasty pork tender loing in cosmic dust sauce with a choice of 5 astronomical sides. Famous celebs like Justin Beiber, Will Smith, Barack Obama, Jennifer Lopez, Marilyn Monroe and Elvis, just to name a few, have all dined at the Solar Eclipse at some point in their careers. </p> 
-            <button>Book a meal</button>
-            <h3>Events</h3>
-            <img src="./images/pablo-heimplatz-ZODcBkEohk8-unsplash.jpg" alt="events-photo"><br>
-            <button>Check our schedule</button>
+            <button class="button">Book a meal</button>
+            </div> 
+        
+            <div class="attraction">    
+                <h3 id="rides">Shopping & More</h3>
+                <img src="images/nathan-duck-KnLj3o9A66E-unsplash.jpg" alt="rides-photo">
+                <p> some description</p>
+                <button class ="button">View more</button>
+            </div>
+        
+        </main> 
+    
+        <!-- Asides for navigation--> 
+        <aside >
+            <div>
+                <h3>Read - Before you ride.</h3>
+                
+                    <div><h4>Galactic Insurance Plan</h4></div>
+                    <div><h4>Safety Policy</h4></div>
+                    <div><h4>Refund Policy</h4></div>
+                    <div><h4>Do's and Don'ts</h4></div>
+                    <div><h4>Park Map</h4></div>
+                    <div><h4>Directory</h4></div>
+                    <div><h4>More Info</h4></div>
+                
+            </div>
+            
         </aside>
+        </div>
         <!-- Footer-->
         <footer>
-            <img  class="footer-logo" src="./images/logo.svg" alt="logo-spacez">
+            <img  class="footer-logo" src="images/logo.svg" alt="logo-spacez">
             <h5>Space Z</h5>
             <address>
                 <a href="mailto:info@spacez.com">info@spacez.com</a>
                 <a href="tel:+19345929023">+1 934 592 9023</a>
             </address>
-            <nav class="footer-menu">
-                <a href="./about.html">About us</a>
-                <a href="./contact.html">Contact us</a>
-                <a href="./faq.html">FAQ</a>
-            </nav>     
+            <div class="footer-menu">
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact us</a>
+                <a href="faq.html">FAQ</a>
+            </div>     
         </footer>
         <p class="copyright">&copy; 2020 Space Z. All rights reserved.</p>
     </body>
