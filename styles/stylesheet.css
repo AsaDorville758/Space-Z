@@ -1,51 +1,39 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-body {
-/*    font-family: 'Open Sans', sans-serif;*/
+html,body{
+    height:100%vh;
+    width:100%vw;
+    border:0;
+    margin-top:0em;
+}
+
+
+body{
     font-family: 'Rajdhani', sans-serif;
     background: #E8E8E8;
-    display: grid;
-    grid-template-areas: 
-        ". header header header header header nav nav nav nav nav ."
-        ". main main main main main main aside aside aside aside ."
-        ". park-map park-map park-map park-map park-map facilities facilities facilities facilities facilities ."
-        ". park-hours park-hours park-hours park-hours park-hours park-location park-location park-location park-location park-location ."
-        ". footer footer footer footer footer footer footer footer footer footer ."
-        ". copyright copyright copyright copyright copyright copyright copyright copyright copyright copyright .";    
-    grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
-    grid-row: auto;
+  
     
 }
-
-header {
-    grid-area: header;
-    background: #08415C;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #ffffff;
-    max-height: 2em;
-    padding-top: 1em;
-    text-align: left;
-    
-}
-
-header img {
-    width: 100%;
-    height: 100%;
-    text-align: left;
-}
-
-nav {
-    grid-area: nav;
-    background: #08415C;
-    max-height: 3em;
+header{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position:fixed;
+    width:99%;
+    background-color:#08415C;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.10);
     color: #ffffff;
-    text-align: center;
-    padding-top: 0.8em;
-    
+    height:5em;
+    z-index: 3;
 }
-
+nav ul li{
+    display:inline-block;
+    margin:auto 0em auto 0em;
+}
+nav ul li:last-child{
+    margin-right:3em;
+}
 nav a {
     color: #ffffff;
     text-decoration-line: none;
@@ -54,63 +42,130 @@ nav a {
     padding-right: 2em;
     
 }
-
-#main-button {
-    background: #CC2936;
-    padding: 0.5em;
-    border-radius: 8px;
+.logo{
+    margin:auto 0em auto 2em;
 }
-
-main {
+.header_nav {
+    margin-top:auto;
+    margin-bottom: auto;
+    
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: 1fr 9fr 3fr 1fr;
+    grid-template-areas: 
+        ". main aside ."
+        ". park-map facilities ."
+        ". park-hours park-location .";
+    
+    grid-template-rows:auto;
+    column-gap: 0.5em;
+    position:relative;
+    top:6em;
+    z-index:2;
+}
+main{
     grid-area: main;
-    padding-left: 4em;
+    display:flex;
+    flex-direction: column;
+    min-width:75em;
 }
-
-main img {
+#main_img {
     width: 100%;
-    height: 600px;
+    min-width:100%;
+    height: 800px;
     z-index: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 main h2 {
-    z-index: 1;
-    position: absolute;
     top: 12em;
     left: 3em;
     color: #fff;
 }
 
 main h5 {
-    z-index: 1;
-    position: absolute;
-    top: 25em;
+    top: 30em;
     left: 5.5em;
     color: #fff;
 }
 
-aside {
-    grid-area: aside;
+.slideshow_container{
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    text-align:center;
+}
+.slideshow_container img{
+    width:100%;
+    
+}
+.slideshow_container ul li{
+    display:inline-block;
+    margin-right:3em;
+}
+.slideshow_container ul a{
+    color:white;
+    
+}
+
+.rides {
+    align-self: center;
+    justify-self: center;
+}
+.rides h3 {
+    margin-top: 6em;
+    margin-left: 8em;
+    position: absolute;
     text-align: center;
-    background: rgba(232, 232, 232, 0.85);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    max-height: 600px;
-    margin-right: 4em;
+    color: #fff;
+    
 }
 
-aside h3 {
+.rides p {
     text-align: center;
+    position: relative;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    
 }
 
-aside p {
-    text-align: left;
-    padding: 0.5em;
+.tickets h3 {
+    margin-top: 3em;
+    position: relative;
+    text-align: center;
+    display: block;
+    
 }
 
-aside table {
+.tickets p {
+    text-align: center;
+    position: relative;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    
+}
+
+.tickets table {
     margin-left:auto; 
     margin-right:auto;
 }
+
+.rides img {
+    z-index: 0;
+    height: 100%;
+    max-width: 100%;
+}
+
+.rides button {
+    position: relative;
+    background: #CC2936;
+    padding: 0.8em;
+    border-radius: 8px;
+    color: #FFF;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: none; 
+}
+
 th, td {
   border: 1px solid #388697;
 }
@@ -128,19 +183,18 @@ tbody {
 
 }
 .park-map {
-    grid-area: park-map;
+    grid-area:park-map;
     padding-left: 4em;
+    background:pink;
 }
 
 .park-map img {
-    width: 80%;
+    width: 100%;
     height: 600px;
     z-index: 0;
 }
 
 .park-map h3 {
-    z-index: 1;
-    position: absolute;
     top: 35em;
     left: 4em;
     color: #fff;
@@ -148,12 +202,21 @@ tbody {
 }
 
 .park-map h5 {
-    z-index: 1;
-    position: absolute;
     top: 55em;
     left: 6em;
     color: #fff;
     
+}
+.park-map button {
+    z-index: 2;
+    position: relative;
+    background: #B5FFE1;
+    padding: 0.8em;
+    border-radius: 8px;
+    color: #333;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: none; 
+    border-color: #B5FFE1;
 }
 
 .facilities {
@@ -163,6 +226,7 @@ tbody {
     margin-right: 4em;
 
 }
+
 .facilities h3 {
     text-align: center;
 }
@@ -188,58 +252,90 @@ tbody {
     font-family:'Open Sans', sans-serif;
     font-weight: 200;
     font-size: 1em;
-    color: #fff;
+    color: #fff;    
 }
 
 .facilities ul {
     text-align: center;
 }
 
+.facilities button {
+    z-index: 2;
+    position: relative;
+    background: #CC2936;
+    padding: 0.8em;
+    border-radius: 8px;
+    color: #FFF;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: none; 
+}
 .park-hours {
     grid-area: park-hours;
     padding-left: 4em;
+}
+
+.park-hours button {
+    z-index: 2;
+    position: relative;
+    background: #CC2936;
+    padding: 0.8em;
+    border-radius: 8px;
+    color: #FFF;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: none; 
+}
+
+.park-location button {
+    z-index: 2;
+    position: relative;
+    background: #CC2936;
+    padding: 0.8em;
+    border-radius: 8px;
+    color: #FFF;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: none; 
 }
 
 .park-location {
     grid-area: park-location;
     padding-right: 4em;
 }
-/*
-.park-info {
-    grid-area: park-info;
+
+
+
+aside{
+    grid-area: aside;
+    text-align: center;
+    background: rgba(232, 232, 232, 0.85);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 4em;
+    margin-top: 2em;
+    padding-left:2em;
+    padding-right:2em;
+    max-width: 25em;
+    min-width:25em;
+}
+aside img{
+    max-width:25em;
 }
 
-.park-info h3 {
-    float: left;
-}
-.park-info table {
-    float: left;
-}
-.park-info iframe {
-    float: left;
+.button {
+    background: #CC2936;
+    padding: 0.5em;
+    border-radius: 8px;
 }
 
-.park-info p {
-    float: left;
-}
-*/
 
-footer {
-    grid-area: footer;
+footer{
+    width:100%;
+    height:8em;
     background: #08415C;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #ffffff;
     min-height: 10em; 
     text-align: center;
-}
-
-.copyright {
-    grid-area: copyright;
-    background: #C0C0C0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #333333;
-    min-height: 2em;
-    text-align: center;
+    position:relative;
+    bottom:-8em;
 }
 
 .footer-menu {
@@ -269,6 +365,15 @@ footer h5 {
     
 }
 
+.copyright{
+    position:relative;
+    bottom:-8em;
+    background: #C0C0C0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #333333;
+    min-height: 2em;
+    text-align: center;
+}
 
 h1 {
     font-family: Rajdhani, sans-serif;
@@ -359,3 +464,5 @@ a:active {
     color: #B5FFE1;
     text-decoration-line: none;
 }
+
+
