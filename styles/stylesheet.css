@@ -1,51 +1,39 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-body {
-/*    font-family: 'Open Sans', sans-serif;*/
+html,body{
+    height:100%vh;
+    width:100%vw;
+    border:0;
+    margin-top:0em;
+}
+
+
+body{
     font-family: 'Rajdhani', sans-serif;
     background: #E8E8E8;
-    display: grid;
-    grid-template-areas: 
-        ". header header header header header nav nav nav nav nav ."
-        ". main main main main main main aside aside aside aside ."
-        ". park-map park-map park-map park-map park-map facilities facilities facilities facilities facilities ."
-        ". park-hours park-hours park-hours park-hours park-hours park-location park-location park-location park-location park-location ."
-        ". footer footer footer footer footer footer footer footer footer footer ."
-        ". copyright copyright copyright copyright copyright copyright copyright copyright copyright copyright .";    
-    grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
-    grid-row: auto;
+  
     
 }
-
-header {
-    grid-area: header;
-    background: #08415C;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #ffffff;
-    max-height: 2em;
-    padding-top: 1em;
-    text-align: left;
-    
-}
-
-header img {
-    width: 100%;
-    height: 100%;
-    text-align: left;
-}
-
-nav {
-    grid-area: nav;
-    background: #08415C;
-    max-height: 3em;
+header{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position:fixed;
+    width:99%;
+    background-color:#08415C;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.10);
     color: #ffffff;
-    text-align: center;
-    padding-top: 0.8em;
-    
+    height:5em;
+    z-index:6;
 }
-
+nav ul li{
+    display:inline-block;
+    margin:auto 0em auto 0em;
+}
+nav ul li:last-child{
+    margin-right:3em;
+}
 nav a {
     color: #ffffff;
     text-decoration-line: none;
@@ -54,115 +42,194 @@ nav a {
     padding-right: 2em;
     
 }
-
-#main-button {
-    background: #CC2936;
-    padding: 0.5em;
-    border-radius: 8px;
+.logo{
+    margin:auto 0em auto 2em;
 }
-
-main {
+.header_nav {
+    margin-top:auto;
+    margin-bottom: auto;
+    
+}
+.wrapper{
+    display:grid;
+    grid-template-columns:  9fr 3fr ;
+    grid-template-areas: 
+        "main aside "
+        " park-map facilities "
+        " park-hours park-location ";
+    
+    grid-template-rows:auto;
+    column-gap: 0.5em;
+    position:relative;
+    top:6em;
+    padding:0em;
+    margin-left:1em;
+    margin-right:1em;
+    z-index:5;
+}
+main{
     grid-area: main;
-    padding-left: 4em;
+    display:flex;
+    flex-direction: column;
 }
-
-main img {
-    width: 100%;
-    height: 600px;
-    z-index: 0;
+#main_img { /*adjustment*/
+    position:relative;
+    z-index:1;
+    top:-4.6em;
+    height: 30em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 main h2 {
-    z-index: 1;
-    position: absolute;
     top: 12em;
     left: 3em;
     color: #fff;
 }
 
 main h5 {
-    z-index: 1;
-    position: absolute;
-    top: 25em;
+    top: 30em;
     left: 5.5em;
     color: #fff;
 }
+#attractions img{
+    width:40em;
+}
 
-aside {
-    grid-area: aside;
+.slideshow_container{
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    text-align:center;
+}
+.slideshow_container img{
+    width:100%;
+    
+}
+.slideshow_container ul li{
+    display:inline-block;
+    margin-right:3em;
+}
+.slideshow_container ul a{
+    color:white;
+    
+}
+
+.rides {
+    align-self: center;
+    justify-self: center;
+}
+.rides h3 {
+    margin-top: 6em;
+    margin-left: 8em;
+    position: absolute;
     text-align: center;
-    background: rgba(232, 232, 232, 0.85);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    max-height: 600px;
-    margin-right: 4em;
+    color: #fff;
+    
 }
 
-aside h3 {
+.rides p {
     text-align: center;
+    position: relative;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    
 }
 
-aside p {
-    text-align: left;
-    padding: 0.5em;
+.tickets{
+    height:30em;
+    margin-left:0em;
+    margin-right:auto;
+    max-width:30em;
+ 
+   
+}
+.tickets h3 {
+    margin-top: 0em;
+    position: relative;
+    text-align: center;
+    display: block;
+    
 }
 
-aside table {
+.tickets p {
+    text-align: center;
+    position: relative;
+    top: -1.5em;
+    padding-left: 0.5em;
+    
+}
+
+.tickets table {
+    position:relative;
+    top:-2em;
     margin-left:auto; 
     margin-right:auto;
+    margin-bottom:1em;
+    
 }
+
+.rides img {
+    z-index: 0;
+    height: 100%;
+    max-width: 100%;
+}
+
+.rides button {
+    position: relative;
+    background: #CC2936;
+    padding: 0.8em;
+    border-radius: 8px;
+    color: #FFF;
+    font-family: 'Rajdhani', sans-serif;
+    box-shadow: none; 
+}
+
 th, td {
   border: 1px solid #388697;
+  padding: 0em 1em; /*adjustment*/
 }
 thead {
     background: #388697;
     color: #fff;
     text-align: center;
+    font-size: 1.1em;/*adjustment*/
 }
 
 tbody {
     font-family:'Open Sans', sans-serif;
     font-weight: 200;
-    font-size: 1em;
-    
-
+    font-size: 0.9em;/*adjustment*/
 }
 .park-map {
-    grid-area: park-map;
+    grid-area:park-map;
     padding-left: 4em;
+    background:pink;
 }
 
 .park-map img {
-    width: 80%;
+    width: 100%;
     height: 600px;
     z-index: 0;
 }
 
 .park-map h3 {
-    z-index: 1;
-    position: absolute;
     top: 35em;
     left: 4em;
-    color: #fff;
-    
+    color: #fff; 
 }
 
 .park-map h5 {
-    z-index: 1;
-    position: absolute;
     top: 55em;
     left: 6em;
-    color: #fff;
-    
+    color: #fff;  
 }
 
 .facilities {
     grid-area: facilities;
     background: #388697;
     text-align: center;
-    margin-right: 4em;
-
+    max-width:35em;
 }
+
 .facilities h3 {
     text-align: center;
 }
@@ -187,8 +254,8 @@ tbody {
 .facilities tbody {
     font-family:'Open Sans', sans-serif;
     font-weight: 200;
-    font-size: 1em;
-    color: #fff;
+    font-size: 0.9em;
+    color: #fff;    
 }
 
 .facilities ul {
@@ -202,55 +269,108 @@ tbody {
 
 .park-location {
     grid-area: park-location;
-    padding-right: 4em;
 }
-/*
-.park-info {
-    grid-area: park-info;
-}
-
-.park-info h3 {
-    float: left;
-}
-.park-info table {
-    float: left;
-}
-.park-info iframe {
-    float: left;
+iframe{
+    width:28em;
+    
 }
 
-.park-info p {
-    float: left;
-}
-*/
 
-footer {
-    grid-area: footer;
+.park-map, .facilities, .park-hours, .park-location{
+    position:relative;
+    top:-9em;
+}
+
+aside{
+    grid-area: aside;
+    position:relative;
+    background: rgba(232, 232, 232, 0.85);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 4em;
+    margin-top: 2em;
+    padding-left:2em;
+    padding-right:2em;
+    max-width: 25em;
+    min-width:25em;
+    
+}
+
+aside img{
+    max-width:25em;
+}
+
+aside form {/*adjustment*/
+    position:relative;
+    top:-4em;
+    margin:0em;
+    padding:0.8em;
+    font-size:1em;
+    line-height:1em;
+}
+aside form label{
+    display:inline-block;
+    width:5.8em;
+
+}
+aside input[type=text], input[type=email], input[type=number],   {/*adjustment*/
+  width:15em;
+    height:1.5em;
+    margin-bottom:0.8em;
+}
+aside input[type=date], select {
+    width:12.4em;
+    height:2em;
+    margin-bottom:0.5em;
+}
+aside select {
+    width:12.7em;
+    height:2em;
+    margin-bottom:0.5em;
+}
+aside input[type=submit] {
+    margin:0.5em auto;
+    display:block;
+    width:10em;
+    height:3em;
+    padding:auto;
+    color:white;
+    font-size:0.8em;
+ 
+}
+
+
+
+.button {
+    background: #CC2936;
+    padding: 0.5em;
+    border-radius: 8px;
+}
+
+
+footer{
+    width:100%;
     background: #08415C;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #ffffff;
-    min-height: 10em; 
+    color: #ffffff; 
     text-align: center;
-}
-
-.copyright {
-    grid-area: copyright;
-    background: #C0C0C0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: #333333;
-    min-height: 2em;
-    text-align: center;
+    position:relative;
+    bottom:-8em;
 }
 
 .footer-menu {
     text-decoration: none;
     text-align: center;
     box-shadow: none;
+    
+}
+.footer-menu a {
+    color:white;
+    margin:1em;
 }
 
 .footer-logo {
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
     padding: 0.5em;
 }
 
@@ -269,6 +389,15 @@ footer h5 {
     
 }
 
+.copyright{
+    position:relative;
+    bottom:-8em;
+    background: #C0C0C0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #333333;
+    min-height: 2em;
+    text-align: center;
+}
 
 h1 {
     font-family: Rajdhani, sans-serif;
@@ -288,6 +417,24 @@ h2 {
     line-height: 46px;
     text-align: left;
     color: #333333;
+    z-index:3;
+}
+main h2:first-of-type{
+    position:relative;
+    top:8em;
+    margin-left:-1.5em
+}
+main h5:first-of-type{
+    position:relative;
+    top:-12em;
+    z-index:3;
+    margin-left:-3em
+}
+.attraction h2:first-of-type{
+    position:relative;
+    z-index: 4;
+    top:3em;
+    margin-left:-2em;
 }
 
 h3 {
@@ -359,3 +506,6 @@ a:active {
     color: #B5FFE1;
     text-decoration-line: none;
 }
+
+
+
