@@ -25,7 +25,7 @@ header{
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.10);
     color: #ffffff;
     height:5em;
-    z-index: 3;
+    z-index:6;
 }
 nav ul li{
     display:inline-block;
@@ -62,16 +62,18 @@ nav a {
     column-gap: 0.5em;
     position:relative;
     top:6em;
-    z-index:2;
+    z-index:5;
 }
 main{
     grid-area: main;
     display:flex;
     flex-direction: column;
 }
-#main_img {
-    height: 800px;
-    z-index: 0;
+#main_img { /*adjustment*/
+    position:relative;
+    z-index:1;
+    top:-4.6em;
+    height: 48em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 main h2 {
@@ -84,6 +86,9 @@ main h5 {
     top: 30em;
     left: 5.5em;
     color: #fff;
+}
+#attractions img{
+    width:60em;
 }
 
 .slideshow_container{
@@ -126,6 +131,11 @@ main h5 {
     
 }
 
+.tickets{
+    height:48em;
+    margin-left:auto;
+    margin-right:auto;
+}
 .tickets h3 {
     margin-top: 3em;
     position: relative;
@@ -165,19 +175,19 @@ main h5 {
 
 th, td {
   border: 1px solid #388697;
+  padding: 0em 1em; /*adjustment*/
 }
 thead {
     background: #388697;
     color: #fff;
     text-align: center;
+    font-size: 1.4em;/*adjustment*/
 }
 
 tbody {
     font-family:'Open Sans', sans-serif;
     font-weight: 200;
-    font-size: 1em;
-    
-
+    font-size: 1.2em;/*adjustment*/
 }
 .park-map {
     grid-area:park-map;
@@ -194,34 +204,20 @@ tbody {
 .park-map h3 {
     top: 35em;
     left: 4em;
-    color: #fff;
-    
+    color: #fff; 
 }
 
 .park-map h5 {
     top: 55em;
     left: 6em;
-    color: #fff;
-    
-}
-.park-map button {
-    z-index: 2;
-    position: relative;
-    background: #B5FFE1;
-    padding: 0.8em;
-    border-radius: 8px;
-    color: #333;
-    font-family: 'Rajdhani', sans-serif;
-    box-shadow: none; 
-    border-color: #B5FFE1;
+    color: #fff;  
 }
 
 .facilities {
     grid-area: facilities;
     background: #388697;
     text-align: center;
-    margin-right: 4em;
-
+    max-width:40em;
 }
 
 .facilities h3 {
@@ -256,53 +252,23 @@ tbody {
     text-align: center;
 }
 
-.facilities button {
-    z-index: 2;
-    position: relative;
-    background: #CC2936;
-    padding: 0.8em;
-    border-radius: 8px;
-    color: #FFF;
-    font-family: 'Rajdhani', sans-serif;
-    box-shadow: none; 
-}
 .park-hours {
     grid-area: park-hours;
     padding-left: 4em;
-}
-
-.park-hours button {
-    z-index: 2;
-    position: relative;
-    background: #CC2936;
-    padding: 0.8em;
-    border-radius: 8px;
-    color: #FFF;
-    font-family: 'Rajdhani', sans-serif;
-    box-shadow: none; 
-}
-
-.park-location button {
-    z-index: 2;
-    position: relative;
-    background: #CC2936;
-    padding: 0.8em;
-    border-radius: 8px;
-    color: #FFF;
-    font-family: 'Rajdhani', sans-serif;
-    box-shadow: none; 
 }
 
 .park-location {
     grid-area: park-location;
     padding-right: 4em;
 }
-
-
+.park-map, .facilities, .park-hours, .park-location{
+    position:relative;
+    top:-9em;
+}
 
 aside{
     grid-area: aside;
-    text-align: center;
+    position:relative;
     background: rgba(232, 232, 232, 0.85);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-right: 4em;
@@ -312,9 +278,48 @@ aside{
     max-width: 25em;
     min-width:25em;
 }
+
 aside img{
     max-width:25em;
 }
+
+aside form {/*adjustment*/
+    margin:0em;
+    padding:1em;
+    font-size:1.2em;
+    line-height:1.5em;
+}
+aside form label{
+    display:inline-block;
+    width:6em;
+}
+aside input[type=text], input[type=email], input[type=number],   {/*adjustment*/
+  width:15em;
+    height:2em;
+    margin-bottom:0.5em;
+}
+aside input[type=date], select {
+    width:12.4em;
+    height:2em;
+    margin-bottom:0.5em;
+}
+aside select {
+    width:12.7em;
+    height:2em;
+    margin-bottom:0.5em;
+}
+aside input[type=submit] {
+    margin:2em auto;
+    display:block;
+    width:10em;
+    height:3em;
+    padding:auto;
+    color:white;
+    font-size:0.8em;
+ 
+}
+
+
 
 .button {
     background: #CC2936;
@@ -393,6 +398,24 @@ h2 {
     line-height: 46px;
     text-align: left;
     color: #333333;
+    z-index:3;
+}
+main h2:first-of-type{
+    position:relative;
+    top:16em;
+    margin-left:-1.5em
+}
+main h5:first-of-type{
+    position:relative;
+    top:-12em;
+    z-index:3;
+    margin-left:-3em
+}
+.attraction h2:first-of-type{
+    position:relative;
+    z-index: 4;
+    top:3em;
+    margin-left:-2em;
 }
 
 h3 {
@@ -464,5 +487,6 @@ a:active {
     color: #B5FFE1;
     text-decoration-line: none;
 }
+
 
 
